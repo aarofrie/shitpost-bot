@@ -31,19 +31,11 @@ function init() {
 
   bot.login(token);
 
-  bot.once('ready', onReady);
   bot.on('message', onMessage);
   bot.on('disconnect', onDisconnect);
 
   function onDisconnect() {
     process.exitCode = 0;
-  }
-
-  function onReady() {
-    bot.commands = new Map();
-    // bot.commands.set('help', new commands.HelpCommand(bot));
-
-    console.log(`Setup Complete. Active in ${bot.guilds.size} servers.`);
   }
 
   function onMessage(msg) {
@@ -56,21 +48,12 @@ function init() {
     if (msg.author.bot)
       return;
 
-    if (msg.content.trim().startsWith(prefix))
-      offset = prefix.length;
-    else if (msg.content.trim().startsWith(bot.user.toString()))
-      offset = bot.user.toString().length + 1;
-    else // if message doesn't start with the prefix or an @mention, just ignore their message.
-      return;
+    // if msg.author === zack
+    // react :zack:
 
     const userInput = msg.content.substring(offset).split(' ')[0].toLowerCase();
-    const command = bot.commands.get(userInput);
-
-    if (!command)
-      return;
-
-    const args = msg.content.substring(offset + userInput.length).trim();
-    command.run(msg, args);
+    //if msg.content like "lets go" || "kets gi"
+    // react :parrotwave:
   }
 }
 
