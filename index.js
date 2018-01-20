@@ -8,6 +8,8 @@ const retryIn = 5 * 60 * 1000; //
 const maxCrashes = 5;
 let crashes = 0; // if only it were that easy...
 
+runBot();
+
 function runBot() {
   try {
     console.log(`Initializing for attempt number ${crashes} ...`);
@@ -29,6 +31,11 @@ function init() {
   const bot = new Discord.Client();
   const token = config.discord.authToken;
 
+  const baconId = '108352053692125184';
+  const zackId =  '108568431053246464';
+  const zackMoji = ':zack:401543766084943892';
+  const parrotMoji = 'a:ultrafastparrot:397874139848769557';
+
   bot.login(token);
 
   bot.on('message', onMessage);
@@ -48,10 +55,14 @@ function init() {
     if (msg.author.bot)
       return;
 
-    // if msg.author === zack
-    // react :zack:
+      if (msg.author.id === zackId) {
+        msg.react(zackMoji);
+      }
 
-    const userInput = msg.content.substring(offset).split(' ')[0].toLowerCase();
+      // if (msg.author.id === '108352053692125184') {
+      //   msg.react(parrotMoji);
+      // }
+    
     //if msg.content like "lets go" || "kets gi"
     // react :parrotwave:
   }
