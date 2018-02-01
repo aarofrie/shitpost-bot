@@ -34,7 +34,10 @@ function init() {
   const baconId = '108352053692125184';
   const zackId =  '108568431053246464';
   const zackMoji = ':zack:401543766084943892';
+  const rizoId = '100758264047747072'
   const parrotMoji = 'a:ultrafastparrot:397874139848769557';
+
+  const wave7 = 
 
   bot.login(token);
 
@@ -55,9 +58,23 @@ function init() {
     if (msg.author.bot)
       return;
 
-      if (msg.author.id === zackId) {
-        msg.react(zackMoji);
-      }
+    if (msg.author.id === zackId) {
+      msg.react(zackMoji);
+    }
+    else if (msg.content.includes(`@<:zack:401543766084943892>`)) {
+      msg.channel.send(`<@${zackId}>`);
+    }
+    else if(msg.author.id === rizoId) {
+      // msg.react('a:parrotwave7:397874137529319425'); 
+      // msg.react('a:parrotwave6:397874138959839233'); 
+      // msg.react('a:parrotwave5:397874134929113088'); 
+      // msg.react('a:parrotwave4:397874133523890178'); 
+      // msg.react('a:parrotwave3:397874131539853322'); 
+      // msg.react('a:parrotwave2:397874132664188930'); 
+      // msg.react('a:parrotwave1:397874130185093131');
+
+      msg.react(parrotMoji);
+    }
 
       // if (msg.author.id === '108352053692125184') {
       //   msg.react(parrotMoji);
