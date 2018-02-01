@@ -65,23 +65,23 @@ function init() {
       msg.channel.send(`<@${zackId}>`);
     }
     else if(msg.author.id === rizoId) {
-      // msg.react('a:parrotwave7:397874137529319425'); 
-      // msg.react('a:parrotwave6:397874138959839233'); 
-      // msg.react('a:parrotwave5:397874134929113088'); 
-      // msg.react('a:parrotwave4:397874133523890178'); 
-      // msg.react('a:parrotwave3:397874131539853322'); 
-      // msg.react('a:parrotwave2:397874132664188930'); 
-      // msg.react('a:parrotwave1:397874130185093131');
-
-      msg.react(parrotMoji);
+      msg.react('a:parrotwave7:397874137529319425')
+        .then(() => msg.react('a:parrotwave6:397874138959839233')) 
+        .then(() => msg.react('a:parrotwave5:397874134929113088')) 
+        .then(() => msg.react('a:parrotwave4:397874133523890178'))
+        .then(() => msg.react('a:parrotwave3:397874131539853322'))
+        .then(() => msg.react('a:parrotwave2:397874132664188930'))
+        .then(() => msg.react('a:parrotwave1:397874130185093131'));
     }
-
-      // if (msg.author.id === '108352053692125184') {
-      //   msg.react(parrotMoji);
-      // }
-    
-    //if msg.content like "lets go" || "kets gi"
-    // react :parrotwave:
+    else if(msg.content.includes('<@100758264047747072>')) {
+      msg.react('🇷')
+        .then(() => msg.react('🇮'))
+        .then(() => msg.react('🇿'))
+        .then(() => msg.react('🇴'))
+        .then(() => msg.react('🇵'))
+        .then(() => msg.react('🇱'))
+        .then(() => msg.react('🇸'));
+    }
   }
 }
 
