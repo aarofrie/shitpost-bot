@@ -36,7 +36,7 @@ function init() {
   const zackMoji = ':zack:401543766084943892';
   const rizoId = '100758264047747072'
   const parrotMoji = 'a:ultrafastparrot:397874139848769557';
-
+  const jerranId = '189006310501646336';
   const wave7 = 
 
   bot.login(token);
@@ -58,31 +58,49 @@ function init() {
     if (msg.author.bot)
       return;
 
-    if (msg.author.id === zackId) {
+    const rnd = Math.random();
+
+    // only give him a 1/4 chance
+    if (msg.author.id === zackId && rnd <= 0.25) {
       msg.react(zackMoji);
     }
-    else if (msg.content.includes(`@<:zack:401543766084943892>`)) {
+    if (msg.content.includes(`@<:zack:401543766084943892>`)) {
       msg.channel.send(`<@${zackId}>`);
     }
-    else if(msg.author.id === rizoId) {
-      msg.react('a:parrotwave7:397874137529319425')
-        .then(() => msg.react('a:parrotwave6:397874138959839233')) 
-        .then(() => msg.react('a:parrotwave5:397874134929113088')) 
-        .then(() => msg.react('a:parrotwave4:397874133523890178'))
-        .then(() => msg.react('a:parrotwave3:397874131539853322'))
-        .then(() => msg.react('a:parrotwave2:397874132664188930'))
-        .then(() => msg.react('a:parrotwave1:397874130185093131'));
+    if(msg.author.id === rizoId) {
+      if(rnd < 0.05)
+        msg.react('a:parrotwave7:397874137529319425')
+          .then(() => msg.react('a:parrotwave6:397874138959839233')) 
+          .then(() => msg.react('a:parrotwave5:397874134929113088')) 
+          .then(() => msg.react('a:parrotwave4:397874133523890178'))
+          .then(() => msg.react('a:parrotwave3:397874131539853322'))
+          .then(() => msg.react('a:parrotwave2:397874132664188930'))
+          .then(() => msg.react('a:parrotwave1:397874130185093131'));
+      else if (rnd >= 0.05 && rnd <= 0.15)
+        msg.react('a:partyparrot:397874122232954901');
+      else if (rnd >= 0.15 && rnd <= 0.2)
+        msg.react('a:ultrafastparrot:397874139848769557');
     }
-    else if(msg.content.includes('<@100758264047747072>')) {
-      msg.react('🇷')
-        .then(() => msg.react('🇮'))
-        .then(() => msg.react('🇿'))
-        .then(() => msg.react('🇴'))
-        .then(() => msg.react('🇵'))
-        .then(() => msg.react('🇱'))
-        .then(() => msg.react('🇸'));
+    if(msg.content.includes('<@100758264047747072>') ) {
+        msg.react('🇷')
+          .then(() => msg.react('🇮'))
+          .then(() => msg.react('🇿'))
+          .then(() => msg.react('🇴'))
+          .then(() => msg.react('🇵'))
+          .then(() => msg.react('🇱'))
+          .then(() => msg.react('🇸'));
+    }
+    if(msg.content.strip().includes('letsgo') || msg.content.strip().includes('ketsgi')) {
+      msg.react('a:partyparrot:397874122232954901');
+    }
+    if(msg.author.id === jerranId && rnd <= 0.3) {
+      msg.react('a:wendyparrot:399242434300870658');
     }
   }
+}
+
+String.prototype.strip = function() {
+  return ("" + this).toLowerCase().replace(/[\s']/g, "");
 }
 
 module.exports = runBot;
