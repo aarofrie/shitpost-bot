@@ -37,7 +37,7 @@ function init() {
   const rizoId = '100758264047747072'
   const parrotMoji = 'a:ultrafastparrot:397874139848769557';
   const jerranId = '189006310501646336';
-  const wave7 = 
+  const aaronId = '65055432095301632';
 
   bot.login(token);
 
@@ -95,6 +95,13 @@ function init() {
     }
     if(msg.author.id === jerranId && rnd <= 0.3) {
       msg.react('a:wendyparrot:399242434300870658');
+    }
+    if(msg.author.id === aaronId) {
+      if(rnd <= 0.05) {
+        msg.channel.send('https://giphy.com/gifs/man-pepsi-9kDr8Zm8dOuyc');
+        msg.channel.send(`<@${aaronId}> irl`);
+      } else if (rnd <= 0.3)
+        msg.react(':bepsi:410166385918869504');
     }
   }
 }
