@@ -60,12 +60,14 @@ function init() {
 
     const rnd = Math.random();
 
-    // only give him a 1/4 chance
-    if (msg.author.id === zackId && rnd <= 0.25) {
+    if (msg.author.id === zackId && rnd <= 0.2) {
       msg.react(zackMoji);
     }
     if (msg.content.includes(`@<:zack:401543766084943892>`)) {
       msg.channel.send(`<@${zackId}>`);
+    }
+    if (msg.content.includes(`@🥓`)) {
+      msg.channel.send(`<@${baconId}>`);
     }
     if(msg.author.id === rizoId) {
       if(rnd < 0.05)
@@ -91,23 +93,34 @@ function init() {
           .then(() => msg.react('🇸'));
     }
     if(msg.content.strip().includes('letsgo') || msg.content.strip().includes('ketsgi')) {
-      msg.react('a:partyparrot:397874122232954901');
+      if(rnd < 0.5)
+        msg.react('a:partyparrot:397874122232954901');
+      else {
+        msg.react('🇱')
+        .then(() => msg.react('🇪')) 
+        .then(() => msg.react('🇹')) 
+        .then(() => msg.react('🇸')) 
+        .then(() => msg.react('🇬')) 
+        .then(() => msg.react('🇴'));
+      }
     }
-    if(msg.author.id === jerranId && rnd <= 0.3) {
+    if(msg.author.id === jerranId && rnd <= 0.2) {
       msg.react('a:wendyparrot:399242434300870658');
     }
     if(msg.author.id === aaronId) {
-      if(rnd <= 0.05) {
-        msg.channel.send('https://giphy.com/gifs/man-pepsi-9kDr8Zm8dOuyc');
+      if(rnd <= 0.001) {
+        // let's keep this bad boy around for a bit 
+        // msg.channel.send('https://giphy.com/gifs/man-pepsi-9kDr8Zm8dOuyc');
+        msg.channel.send('https://giphy.com/gifs/soda-funny-hot-G1zGMZtfmKjEQ');
         msg.channel.send(`<@${aaronId}> irl`);
-      } else if (rnd <= 0.3)
+      } else if (rnd <= 0.2)
         msg.react(':bepsi:410166385918869504');
     }
   }
 }
 
 String.prototype.strip = function() {
-  return ("" + this).toLowerCase().replace(/[\s']/g, "");
+  return this.toLowerCase().replace(/[\s']/g, "");
 }
 
 module.exports = runBot;
