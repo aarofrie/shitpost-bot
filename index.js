@@ -116,7 +116,7 @@ function init() {
       } else if (rnd <= 0.2)
         msg.react(':bepsi:410166385918869504');
     }
-    if(msg.content.match(/.*ma[kd]e.*great again.*/)) {
+    if(msg.content.toLowerCase().match(/.*ma[kd]e.*great again.*/)) {
       msg.react(':maga:403953614604730378');
     }
 
