@@ -119,7 +119,8 @@ function init() {
     if(msg.content.toLowerCase().match(/.*ma[kd]e.*great again.*/)) {
       msg.react(':maga:403953614604730378');
     }
-
+    if(msg.content.includes(':maga:'))
+    msg.react(':trumpgasm:416058928502276106');
   }
 }
 
