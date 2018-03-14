@@ -29,6 +29,15 @@ function emojiLetter(letter) {
   return emojis.letters[letter.toLowerCase()];
 }
 
+function spongebob(msg) {
+  let reply = '';
+  for(let i = 0; i < msg.content.length; i++)
+    reply += i % 2 === 1
+      ? msg.content[i].toUpperCase()
+      : msg.content[i].toLowerCase();
+  msg.channel.send(reply);
+}
+
 String.prototype.strip = function() {
   return this.toLowerCase().replace(/[\s']/g, "");
 }
@@ -108,5 +117,10 @@ module.exports = [
     name: 'siiick',
     trigger: (msg, rnd) => msg.content === "🤢",
     effect: (msg) => wordReaction(msg, "sick")
+  },
+  {
+    name: 'spongebob',
+    trigger: (msg, rnd) => (msg.author.id === users.jerran || msg.author.id === users.zack) && rnd <= 0.05,
+    effect: (msg) => spongebob(msg)
   }
 ];
