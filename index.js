@@ -117,7 +117,7 @@ function init() {
         msg.react(':bepsi:410166385918869504');
     }
     if(msg.content.toLowerCase().match(/.*ma[kd]e.*great again.*/)) {
-      msg.react(':maga:403953614604730378');
+      msg.react(':maga:423325774674788352');
     }
     if(msg.content.includes(':maga:'))
     msg.react(':trumpgasm:416058928502276106');
