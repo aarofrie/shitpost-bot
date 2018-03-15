@@ -38,6 +38,12 @@ function spongebob(msg) {
   msg.channel.send(reply);
 }
 
+function henlo(msg) {
+  msg.channel.send(`henlo <@${msg.author.id}>`);
+  msg.channel.send(`helllo you STINKY <@${msg.author.id}>`);
+  msg.channel.send(`go shitpost ugly`);
+}
+
 String.prototype.strip = function() {
   return this.toLowerCase().replace(/[\s']/g, "");
 }
@@ -120,7 +126,12 @@ module.exports = [
   },
   {
     name: 'spongebob',
-    trigger: (msg, rnd) => (msg.author.id === users.jerran || msg.author.id === users.zack) && rnd <= 0.05,
+    trigger: (msg, rnd) => (msg.author.id === users.jerran || msg.author.id === users.zack) && rnd <= 0.05 && msg.length >= 10,
     effect: (msg) => spongebob(msg)
+  },
+  {
+    name: 'henlo',
+    trigger: (msg, rnd) => (msg.content.includes('henlo')),
+    effect: henlo
   }
 ];
