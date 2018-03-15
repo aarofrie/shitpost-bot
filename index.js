@@ -51,10 +51,8 @@ function init() {
     if (msg.author.bot)
       return;
 
-    const rnd = Math.random();
-
     responses
-      .filter(r => r.trigger(msg, rnd))
+      .filter(r => r.trigger(msg, Math.random()))
       .forEach(r => r.effect(msg));
   }
 }
