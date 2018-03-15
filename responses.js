@@ -133,5 +133,10 @@ module.exports = [
     name: 'henlo',
     trigger: (msg, rnd) => (msg.content.includes('henlo')),
     effect: henlo
+  },
+  {
+    name: 'mee6',
+    trigger: (msg, rnd) => msg.author.id === users.mee6 && msg.content.includes("I'm Mr. Mee6, look at me!"),
+    effect: (msg) => msg.channel.send("shut up u stupid bot, you're a bad bot")
   }
 ];

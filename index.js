@@ -48,9 +48,6 @@ function init() {
       process.exit(503);
     }
 
-    if (msg.author.bot)
-      return;
-
     responses
       .filter(r => r.trigger(msg, Math.random()))
       .forEach(r => r.effect(msg));
