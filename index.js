@@ -47,6 +47,10 @@ function init() {
       // exit instead of set exitCode because this needs to be shut off immediately
       process.exit(503);
     }
+    
+    //don't reply to self
+    if (msg.author.id === '403968219276378123')
+      return;
 
     responses
       .filter(r => r.trigger(msg, Math.random()))

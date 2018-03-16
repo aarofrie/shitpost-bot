@@ -84,7 +84,7 @@ module.exports = [
     trigger: (msg, rnd) => msg.content.includes(`<@${users.rizo}>`),
     effect: (msg) => wordReaction(msg, "rizopls")
   },
-  {
+  { 
     name: 'lets go party',
     trigger: (msg, rnd) => (msg.content.strip().includes('letsgo') || msg.content.strip().includes('ketsgi')) && rnd < 0.5,
     effect: (msg) => msg.react(emojis.partyParrot)
@@ -126,7 +126,7 @@ module.exports = [
   },
   {
     name: 'spongebob',
-    trigger: (msg, rnd) => (msg.author.id === users.jerran || msg.author.id === users.zack) && rnd <= 0.05 && msg.length >= 10,
+    trigger: (msg, rnd) => ((msg.author.id === users.jerran || msg.author.id === users.zack) && rnd <= 0.05) && msg.content.length >= 10,
     effect: (msg) => spongebob(msg)
   },
   {
