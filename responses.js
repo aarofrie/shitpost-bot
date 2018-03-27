@@ -138,5 +138,10 @@ module.exports = [
     name: 'mee6',
     trigger: (msg, rnd) => msg.author.id === users.mee6 && msg.content.includes("I'm Mr. Mee6, look at me!"),
     effect: (msg) => msg.channel.send("shut up u stupid bot, you're a bad bot")
+  },
+  {
+    name: 'gold kappa',
+    trigger: (msg, rnd) => (rnd <= 0.001),
+    effect: (msg) => msg.react(emojis.gkappa)
   }
 ];
