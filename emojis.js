@@ -13,6 +13,7 @@ module.exports = {
   maga: ':maga:423325774674788352',
   trumpgasm: ':trumpgasm:416058928502276106',
   bepsi: ':bepsi:410166385918869504',
+  gkappa: ':gkappa:423160844650676244',
 
   letters: {
     a: '🇦',
