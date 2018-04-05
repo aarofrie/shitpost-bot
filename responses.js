@@ -141,7 +141,7 @@ module.exports = [
   },
   {
     name: 'gold kappa',
-    trigger: (msg, rnd) => (rnd <= 0.001),
+    trigger: (msg, rnd) => (rnd <= 0.00001),
     effect: (msg) => msg.react(emojis.gkappa)
   }
 ];
