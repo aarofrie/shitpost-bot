@@ -3,8 +3,8 @@ const users = require('./users');
 
 function aaronGif(msg) {
   // let's keep this bad boy around for a bit 
-  // msg.channel.send('https://giphy.com/gifs/man-pepsi-9kDr8Zm8dOuyc');
-  msg.channel.send('https://giphy.com/gifs/soda-funny-hot-G1zGMZtfmKjEQ');
+  msg.channel.send('https://giphy.com/gifs/man-pepsi-9kDr8Zm8dOuyc');
+  // msg.channel.send('https://giphy.com/gifs/soda-funny-hot-G1zGMZtfmKjEQ');
   msg.channel.send(`<@${users.aaron}> irl`);
 }
 
@@ -101,7 +101,7 @@ module.exports = [
   },
   {
     name: 'aaron gif reply',
-    trigger: (msg, rnd) => msg.author.id === users.aaron && rnd <= 0.01,
+    trigger: (msg, rnd) => msg.author.id === users.aaron && rnd <= 0.001,
     effect: aaronGif 
   },
   {
