@@ -52,6 +52,8 @@ function init() {
     if (msg.author.id === '403968219276378123')
       return;
 
+    console.log(msg.content);
+
     responses
       .filter(r => r.trigger(msg, Math.random()))
       .forEach(r => r.effect(msg));

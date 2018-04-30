@@ -120,6 +120,11 @@ module.exports = [
     effect: (msg) => msg.react(emojis.trumpgasm)
   },
   {
+    name: 'trumpgasm -> maga',
+    trigger: (msg, rnd) => msg.content.includes(':trumpgasm:'),
+    effect: (msg) => msg.react(emojis.maga)
+  },
+  {
     name: 'siiick',
     trigger: (msg, rnd) => msg.content === "🤢",
     effect: (msg) => wordReaction(msg, "sick")
@@ -143,5 +148,12 @@ module.exports = [
     name: 'gold kappa',
     trigger: (msg, rnd) => (rnd <= 0.00001),
     effect: (msg) => msg.react(emojis.gkappa)
+  },
+  {
+    name: 'wtf',
+    trigger: (msg) => msg.content.includes('👁') && msg.content.includes('👄'),
+    effect: (msg) => msg.channel.send(`👁 👁
+      👄
+🤜  🤛`)
   }
 ];
