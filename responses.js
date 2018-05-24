@@ -157,8 +157,8 @@ module.exports = [
 🤜  🤛`)
   },
   {
-    name: 'game sucks',
+    name: 'steam game sucks',
     trigger: (msg) => msg.author.id === users.aaron && msg.content.includes("store.steampowered.com"),
-    effect: (msg) => msg.channel.send("No Aaron, no one wants to buy your game")
+    effect: (msg) => msg.channel.send("No Aaron, no one wants to buy your steam game")
   }
 ];
